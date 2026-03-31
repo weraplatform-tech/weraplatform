@@ -1,0 +1,1 @@
+{\n  "name": "backend",\n  "version": "1.0.0",\n  "description": "Backend for Wera Platform",\n  "main": "index.js",\n  "scripts": {\n    "test": "echo 'Error: no test specified' && exit 1"\n  },\n  "author": "Wera Platform Team",\n  "license": "ISC"\n}
