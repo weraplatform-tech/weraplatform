@@ -18,14 +18,16 @@ const ProfilePage     = React.lazy(() => import('@/pages/profile/ProfilePage'))
 const AdminDashboard  = React.lazy(() => import('@/pages/admin/AdminDashboard'))
 
 function ProtectedRoute({ children, role }: { children: React.ReactNode; role?: string }) {
-  const { isAuthenticated, user } = useAuthStore()
+  const state = useAuthStore() as any
+  const { isAuthenticated, user } = state
   if (!isAuthenticated) return <Navigate to="/auth/login" replace />
   if (role && user?.role !== role && user?.role !== 'super_admin') return <Navigate to="/dashboard" replace />
   return <>{children}</>
 }
 
 function PublicRoute({ children }: { children: React.ReactNode }) {
-  const { isAuthenticated } = useAuthStore()
+  const state = useAuthStore() as any
+  const { isAuthenticated } = state
   if (isAuthenticated) return <Navigate to="/dashboard" replace />
   return <>{children}</>
 }
