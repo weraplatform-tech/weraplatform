@@ -1,1 +1,21 @@
-{"name": "your-package-name", "version": "1.0.0", "main": "backend/dist/index.js", "scripts": {"start": "node backend/dist/index.js"}, "dependencies": {}}
+{"name": "{
+  "name": "wera-api",
+  "version": "1.0.0",
+  "main": "backend/dist/index.js",
+  "scripts": {
+    "build": "cd backend && tsc",
+    "start": "node backend/dist/index.js"
+  }
+}
+```
+
+---
+
+**Fix your Render Build Command** to:
+```
+yarn install && yarn build
+```
+
+**Start Command** stays:
+```
+node backend/dist/index.js", "version": "1.0.0", "main": "backend/dist/index.js", "scripts": {"start": "node backend/dist/index.js"}, "dependencies": {}}
